@@ -39,7 +39,7 @@ export default function SignUp() {
   return (
     <section>
       <Toaster />
-      <div>{loading ? 'Loading' : 'App'}</div>
+      {/* <div>{loading ? 'Loading' : 'App'}</div> */}
 
       <div className="grid grid-cols-1 lg:grid-cols-2">
 

@@ -22,7 +22,7 @@ export default function SignIn() {
       setLoading(true);
       await axios.post("/api/users/signin", userData);
       toast.success("SignIn successfully");
-      router.push("/profile");
+      router.push("/");
     } catch (error: any) {
       toast.error(error.message);
     } finally {
@@ -40,7 +40,7 @@ export default function SignIn() {
   return (
     <section>
       <Toaster />
-      <div>{loading ? "Loading" : "App"}</div>
+      {/* <div>{loading ? "Loading" : "App"}</div> */}
 
       <div className="grid grid-cols-1 lg:grid-cols-2 mt-12">
         <div className="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
