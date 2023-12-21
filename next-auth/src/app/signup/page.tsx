@@ -21,12 +21,10 @@ export default function SignUp() {
   const onSignUp = async () => {
     try {
       setLoading(true);
-      const response = await axios.post('/api/users/signup', userData);
-      console.log(response.data);
+      await axios.post('/api/users/signup', userData);
       toast.success('Account created successfully');
       router.push('/signin');
     } catch (error: any) {
-      console.log(error.message);
       toast.error(error.message);
     } finally {
       setLoading(false);

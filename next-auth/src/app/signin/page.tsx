@@ -20,12 +20,10 @@ export default function SignIn() {
   const onSignIn = async () => {
     try {
       setLoading(true);
-      const response = await axios.post("/api/users/signin", userData);
-      console.log("Login success", response.data);
-      toast.success("Login success");
+      await axios.post("/api/users/signin", userData);
+      toast.success("SignIn successfully");
       router.push("/profile");
     } catch (error: any) {
-      console.log("Login failed", error.message);
       toast.error(error.message);
     } finally {
       setLoading(false);
