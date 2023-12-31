@@ -8,7 +8,6 @@ const blogSchema = new mongoose.Schema({
     description: {
         type: String,
         required: [true, 'Please enter the description'],
-        unique: true,
     },
     image: {
         type: String,

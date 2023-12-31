@@ -1,4 +1,4 @@
-import {dbConnect} from '../../../../dbConfig/dbConfig'
+import { dbConnect } from '../../../../dbConfig/dbConfig';
 import User from "../../../../models/userModel";
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
@@ -32,7 +32,7 @@ export async function POST(request) {
             name: user.name,
             email: user.email
         }
-        
+
         //create token
         const token = jwt.sign(tokenData, process.env.TOKEN_SECRET, { expiresIn: "1d" })
 
@@ -40,11 +40,11 @@ export async function POST(request) {
             message: "SignIn successful",
             success: true,
         });
-        
+
         response.cookies.set("token", token, {
             httpOnly: true,
         });
-        
+
         return response;
 
     } catch (error) {
