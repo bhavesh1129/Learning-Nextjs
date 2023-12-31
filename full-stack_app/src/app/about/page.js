@@ -42,7 +42,7 @@ export default function AboutPage() {
                     </div>
                 </div>
             </section>
-            <hr className="my-8" />
+            <hr  />
         </>
     )
 }

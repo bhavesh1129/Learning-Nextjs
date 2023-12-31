@@ -1,8 +1,25 @@
+'use client'
 import Link from "next/link";
+import axios from 'axios';
+import { toast } from 'react-hot-toast';
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
+    const router = useRouter();
     const session = true;
     const isAdmin = true;
+
+    const logout = async () => {
+        try {
+            await axios.get('/api/users/logout');
+            toast.success('Logout successfully');
+            router.push('/login');
+        } catch (error) {
+            console.log('Logout failed', error.message);
+            toast.error(error.message);
+        }
+    };
+
     return (
         <header className="text-gray-600 body-font">
             <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -26,7 +43,7 @@ export default function Navbar() {
                 </nav>
                 {
                     session ? (
-                        isAdmin && <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Logout
+                        isAdmin && <button onClick={logout} className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Logout
                             <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
                                 <path d="M5 12h14M12 5l7 7-7 7"></path>
                             </svg>

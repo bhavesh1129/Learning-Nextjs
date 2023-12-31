@@ -1,6 +1,12 @@
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import { Toaster } from "react-hot-toast";
+
 export default function Home() {
   return (
     <>
+      <Toaster />
+      <Navbar />
       <div className="relative w-full bg-white">
         <div className="mx-auto max-w-7xl lg:px-8">
           <div className="flex flex-col justify-center px-4 py-2 lg:px-6">
@@ -64,8 +70,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <hr />
 
-      <hr className="my-8" />
+      <Footer />
     </>
   )
 }

@@ -15,7 +15,8 @@ const userSchema = new mongoose.Schema({
         required: [true, 'Please enter your password'],
     },
     image: {
-        type: String
+        type: String,
+        default: 'https://cdn-icons-png.flaticon.com/512/168/168726.png'
     },
     isVerified: {
         type: Boolean,
@@ -29,7 +30,7 @@ const userSchema = new mongoose.Schema({
     forgetPasswordTokenExpiry: { type: Date },
     verifyToken: { type: String },
     verifyTokenExpiry: { type: Date }
-});
+}, { timestamps: true });
 
 const User = mongoose.models.users || mongoose.model("users", userSchema);
 

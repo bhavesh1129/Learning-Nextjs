@@ -1,7 +1,7 @@
-import { getDataFromToken } from "@/utils/getDataFromToken";
+import { getDataFromToken } from "../../../../utils/getDataFromToken";
 import { NextRequest, NextResponse } from "next/server";
-import User from "@/models/userModel";
-import { dbConnect } from "@/dbConfig/dbConfig";
+import User from "../../../../models/userModel";
+import { dbConnect } from "../../../../dbConfig/dbConfig";
 
 dbConnect();
 

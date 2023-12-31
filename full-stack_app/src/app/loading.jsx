@@ -1,21 +1,11 @@
-// import { SunspotLoader } from "react-awesome-loaders";
-// export default function Loading() {
-//     return (
-//         <>
-//             <SunspotLoader
-//                 gradientColors={["#6366F1", "#E0E7FF"]}
-//                 shadowColor={"#3730A3"}
-//                 desktopSize={"128px"}
-//                 mobileSize={"100px"}
-//             />
-//         </>
-//     );
-// };
-
-import React from 'react'
-
 export default function loading() {
   return (
-    <div>loading</div>
+    <div className="flex justify-center items-center h-screen ">
+      <div className="grid gap-2">
+        <div className="flex items-center justify-center ">
+          <div className="w-40 h-40 border-t-4 border-b-4 border-orange-700 rounded-full animate-spin"></div>
+        </div>
+      </div>
+    </div>
   )
 }
