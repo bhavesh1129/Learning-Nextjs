@@ -15,7 +15,7 @@ export default function BlogPage() {
         const getData = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get('/api/blogs/data', blogData, { cache: 'no-store' });
+                const response = await axios.get('/api/blogs/data');
                 setBlogData(response.data);
                 router.push('/blogs');
             } catch (error) {
