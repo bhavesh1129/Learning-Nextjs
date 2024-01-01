@@ -7,7 +7,6 @@ dbConnect();
 export const GET = async (request) => {
     try {
         const blogs = await Blog.find();
-        console.log(blogs);
         return NextResponse.json(blogs);
     } catch (err) {
         console.log(err);

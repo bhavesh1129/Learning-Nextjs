@@ -10,7 +10,6 @@ export async function POST(request) {
     try {
         const reqBody = await request.json();
         const { name, email, password, image } = reqBody;
-        console.log(reqBody);
 
         // Check for existing user
         const user = await User.findOne({ email });

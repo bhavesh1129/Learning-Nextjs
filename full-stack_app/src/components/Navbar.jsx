@@ -1,13 +1,16 @@
 'use client'
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { useRouter } from "next/navigation";
 
 export default function Navbar() {
     const router = useRouter();
-    const session = true;
-    const isAdmin = true;
+    // const session = true;
+    // const isAdmin = true;
+    const [isAdmin, setIsAdmin] = useState(false);
+    const [session, setSession] = useState({});
 
     const logout = async () => {
         try {
@@ -20,6 +23,21 @@ export default function Navbar() {
         }
     };
 
+    const getUserInfo = async () => {
+        try {
+            const userInfo = await axios.get('/api/users/user', session, { caches: 'no-cache' });
+            setSession(userInfo.data.data);
+            setIsAdmin(userInfo.data.data.isAdmin);
+        } catch (error) {
+            console.log('User info not found', error.message);
+            toast.error(error.message);
+        }
+    };
+    
+    useEffect(() => {
+        getUserInfo();
+    }, []);
+    
     return (
         <header className="text-gray-600 body-font">
             <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
