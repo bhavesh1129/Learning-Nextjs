@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
+import Image from "next/image";
 
 export default function LoginPage() {
     const router = useRouter();
@@ -120,10 +121,10 @@ export default function LoginPage() {
                 </div>
 
                 <div className="h-full w-full">
-                    <img
+                    <Image
                         className="mx-auto h-full w-full object-cover"
                         src="https://images.unsplash.com/photo-1630673245362-f69d2b93880e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-                        alt=""
+                        alt="image"
                     />
                 </div>
             </div>

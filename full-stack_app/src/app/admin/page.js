@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import toast, { Toaster } from 'react-hot-toast';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function AdminPage() {
 
@@ -162,7 +163,7 @@ export default function AdminPage() {
                                                 <td className="whitespace-nowrap px-4 py-4">
                                                     <div className="flex items-center">
                                                         <div className="h-10 w-10 flex-shrink-0">
-                                                            <img
+                                                            <Image
                                                                 className="h-10 w-10 rounded-full object-cover"
                                                                 src={person?.image}
                                                                 alt="image"
@@ -286,7 +287,7 @@ export default function AdminPage() {
                                                 <td className="whitespace-nowrap px-4 py-4">
                                                     <div className="flex items-center">
                                                         <div className="h-10 w-10 flex-shrink-0">
-                                                            <img
+                                                            <Image
                                                                 className="h-10 w-10 rounded-full object-cover"
                                                                 src={blog?.image}
                                                                 alt="Blog Image"

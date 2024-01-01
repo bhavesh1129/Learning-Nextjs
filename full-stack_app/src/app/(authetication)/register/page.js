@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation';
 import toast, { Toaster } from 'react-hot-toast';
 import axios from "axios"; 
+import Image from 'next/image';
 
 export default function RegisterPage() {
     const router = useRouter();
@@ -44,10 +45,10 @@ export default function RegisterPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2">
 
                 <div className="h-full w-full">
-                    <img
+                    <Image
                         className="mx-auto h-full w-full object-cover"
                         src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80"
-                        alt=""
+                        alt="image"
                     />
                 </div>
 

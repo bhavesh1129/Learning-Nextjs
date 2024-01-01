@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { Toaster } from "react-hot-toast";
@@ -25,7 +26,7 @@ export default function Home() {
             </p>
           </div>
           <div className="rounded-lg bg-gray-200 mt-6 p-4">
-            <img
+            <Image
               className="aspect-[3/2] w-full rounded-lg bg-gray-50 object-cover lg:aspect-auto lg:h-[400px]"
               src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg"
               alt="Banner Image"
@@ -38,22 +39,22 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-2xl  text-center">
             <div className="isolate flex justify-center -space-x-2">
-              <img
+              <Image
                 className="relative z-30 inline-block h-14 w-14 rounded-full ring-4 ring-white"
                 src="https://images.pexels.com/photos/977402/pexels-photo-977402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 alt="Dan_Abromov"
               />
-              <img
+              <Image
                 className="relative z-20 inline-block h-14 w-14 rounded-full ring-4 ring-white"
                 src="https://res.cloudinary.com/crunchbase-production/image/upload/c_thumb,h_170,w_170,f_auto,g_faces,z_0.7,b_white,q_auto:eco,dpr_1/smokhfs2uevnppc2bmwl"
                 alt="Guillermo_Rauch"
               />
-              <img
+              <Image
                 className="relative z-10 inline-block h-14 w-14 rounded-full ring-4 ring-white"
                 src="https://leerob.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar.b1d1472f.jpg&w=256&q=75"
                 alt="Lee_Robinson"
               />
-              <img
+              <Image
                 className="relative z-0 inline-block h-14 w-14 rounded-full ring-4 ring-white"
                 src="https://nextjs.org/_next/image?url=https%3A%2F%2Fwww.datocms-assets.com%2F35255%2F1665059775-delba.jpg&w=640&q=75"
                 alt="Delba"

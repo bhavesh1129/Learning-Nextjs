@@ -36,7 +36,7 @@ export default function Navbar() {
 
     useEffect(() => {
         getUserInfo();
-    }, []);
+    });
 
     return (
         <header className="text-gray-600 body-font">
