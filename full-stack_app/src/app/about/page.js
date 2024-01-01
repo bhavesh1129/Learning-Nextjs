@@ -37,7 +37,7 @@ export default function AboutPage() {
                                     </div>
                                 </div>
                                 <div className="lg:w-1/2 sm:w-1/3 w-full rounded-lg overflow-hidden mt-6 sm:mt-0">
-                                    <Image className="object-cover object-center w-full h-full" src="https://images.pexels.com/photos/7433822/pexels-photo-7433822.jpeg" alt="about image" />
+                                    <Image width={1200} height={600} className="object-cover object-center w-full h-full" src="https://images.pexels.com/photos/7433822/pexels-photo-7433822.jpeg" alt="about image" />
                                 </div>
                             </div>
                         </section>

@@ -45,7 +45,7 @@ export default function RegisterPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2">
 
                 <div className="h-full w-full">
-                    <Image
+                    <Image width={100} height={100}
                         className="mx-auto h-full w-full object-cover"
                         src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80"
                         alt="image"

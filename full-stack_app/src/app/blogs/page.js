@@ -26,7 +26,7 @@ export default function BlogPage() {
             }
         };
         getData();
-    });
+    },[]);
 
     const getFormatedTime = (timestampStr) => {
         var options = { day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric' };
@@ -61,7 +61,7 @@ export default function BlogPage() {
                                     {blogData?.map((blog) => (
                                         <div key={blog?._id} className="lg:w-1/3 sm:w-1/2 p-4">
                                             <div className="flex relative">
-                                                <Image alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src={blog?.image} />
+                                                <Image width={1200} height={720} alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src={blog?.image} />
                                                 <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
                                                     <div className='text-orange-400 mb-1 flex justify-start items-center font-semibold '>
                                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">

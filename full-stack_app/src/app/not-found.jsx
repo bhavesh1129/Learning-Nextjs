@@ -5,7 +5,7 @@ export default function NotFound() {
     return (
         <div className="error-content-area my-5">
             <h1 className="error-heading text-orange-400">404 Error</h1>
-            <Image className="error-img py-10" src="https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif" alt="File Not Found" />
+            <Image width={100} height={100} className="error-img py-10" src="https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif" alt="File Not Found" />
             <div className="error-content pt-8 text-gray-400">
                 <h3 className="text-xl font-bold">Are you&apos;re lost?</h3>
                 <p>It looks like nothing was found at this location.</p>

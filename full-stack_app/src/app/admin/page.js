@@ -9,27 +9,6 @@ import Image from 'next/image';
 
 export default function AdminPage() {
 
-    const people = [
-        {
-            name: 'John Doe',
-            title: 'Front-end Developer',
-            department: 'Engineering',
-            email: 'john@devui.com',
-            role: 'Developer',
-            image:
-                'https://images.unsplash.com/photo-1628157588553-5eeea00af15c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80',
-        },
-        {
-            name: 'Jane Doe',
-            title: 'Back-end Developer',
-            department: 'Engineering',
-            email: 'jane@devui.com',
-            role: 'CTO',
-            image:
-                'https://images.unsplash.com/photo-1639149888905-fb39731f2e6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80',
-        },
-    ];
-
     const [loading, setLoading] = useState(true);
     const [userData, setUserData] = useState([]);
     const [blogData, setBlogData] = useState([]);
@@ -163,7 +142,7 @@ export default function AdminPage() {
                                                 <td className="whitespace-nowrap px-4 py-4">
                                                     <div className="flex items-center">
                                                         <div className="h-10 w-10 flex-shrink-0">
-                                                            <Image
+                                                            <Image width={100} height={100}
                                                                 className="h-10 w-10 rounded-full object-cover"
                                                                 src={person?.image}
                                                                 alt="image"
@@ -287,7 +266,7 @@ export default function AdminPage() {
                                                 <td className="whitespace-nowrap px-4 py-4">
                                                     <div className="flex items-center">
                                                         <div className="h-10 w-10 flex-shrink-0">
-                                                            <Image
+                                                            <Image width={100} height={100}
                                                                 className="h-10 w-10 rounded-full object-cover"
                                                                 src={blog?.image}
                                                                 alt="Blog Image"
