@@ -23,7 +23,7 @@ export default function RegisterPage() {
             setLoading(true);
             await axios.post('/api/users/register', userData);
             toast.success('Account created successfully');
-            router.push('/register');
+            router.push('/');
         } catch (error) {
             toast.error(error.message);
         } finally {

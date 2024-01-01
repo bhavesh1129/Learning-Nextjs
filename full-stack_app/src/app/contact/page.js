@@ -1,6 +1,16 @@
+'use client'
+
+import toast, { Toaster } from "react-hot-toast";
+
 export default function ContactPage() {
+
+    const showDummyMessage = () => {
+        toast.success("Your message is sent successfully!");
+    };
+
     return (
         <>
+            <Toaster />
             <div className="mx-auto max-w-7xl px-4">
                 <div className="flex flex-col space-y-8 pb-10 pt-6 md:pt-12">
                     <div className="mx-auto mb-4 max-w-2xl text-center">
@@ -34,7 +44,7 @@ export default function ContactPage() {
                                 <label htmlFor="message" className="leading-7 text-sm text-gray-600">Message</label>
                                 <textarea id="message" name="message" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
                             </div>
-                            <button className="text-white bg-orange-400 border-0 py-2 px-6 focus:outline-none hover:bg-orange-600 rounded font-bold text-lg">Send Message
+                            <button className="text-white bg-orange-400 border-0 py-2 px-6 focus:outline-none hover:bg-orange-600 rounded font-bold text-lg" onClick={showDummyMessage}>Send Message
                             </button>
                         </div>
                     </div>

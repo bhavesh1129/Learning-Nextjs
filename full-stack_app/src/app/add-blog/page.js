@@ -30,7 +30,7 @@ export default function AddBlog() {
                     'Content-Type': 'application/json',
                 },
             });
-            
+
             toast.success("Blog added successfully");
             router.push("/blogs");
         } catch (error) {
@@ -39,7 +39,7 @@ export default function AddBlog() {
             setLoading(false);
         }
     };
-
+    console.log(blogInfo);
 
     return (
         <>
@@ -73,7 +73,7 @@ export default function AddBlog() {
                                         type="text"
                                         placeholder="Enter the title of your blog"
                                         id="title"
-                                        autoComplete='off'
+                                        autoComplete='off' value={blogInfo?.title}
                                         onChange={(e) => setBlogInfo({ ...blogInfo, title: e.target.value })}
                                     ></input>
                                 </div>
@@ -88,7 +88,7 @@ export default function AddBlog() {
                                 </label>
                                 <input
                                     className="flex h-10 w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
-                                    type="text"
+                                    type="text" value={blogInfo?.slug}
                                     placeholder="Enter the unique slug of your blog"
                                     id="slug" autoComplete='off' onChange={(e) => setBlogInfo({ ...blogInfo, slug: e.target.value })}
                                 ></input>
@@ -103,7 +103,7 @@ export default function AddBlog() {
                                 </label>
                                 <input
                                     className="flex h-10 w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
-                                    type="text"
+                                    type="text" value={blogInfo?.userId}
                                     placeholder="Enter the author's name of your blog"
                                     id="userId" autoComplete='off' onChange={(e) => setBlogInfo({ ...blogInfo, userId: e.target.value })}
                                 ></input>
@@ -119,7 +119,7 @@ export default function AddBlog() {
                                     </label>
                                     <input
                                         className="flex h-10 w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
-                                        type="text"
+                                        type="text" value={blogInfo?.image}
                                         placeholder="Enter the image url of your blog"
                                         id="image" autoComplete='off' onChange={(e) => setBlogInfo({ ...blogInfo, image: e.target.value })}
                                     ></input>
@@ -136,7 +136,7 @@ export default function AddBlog() {
                                     </label>
                                     <textarea
                                         className="flex h-40 w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
-                                        placeholder="Enter the content of your blog"
+                                        placeholder="Enter the content of your blog" value={blogInfo?.description}
                                         id="description" autoComplete='off' onChange={(e) => setBlogInfo({ ...blogInfo, description: e.target.value })}
                                     ></textarea>
                                 </div>

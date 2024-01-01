@@ -16,9 +16,10 @@ export const GET = async (request) => {
 
 export const POST = async (request) => {
     try {
-        console.log('Received request body:', request.body);
+        const reqBody = await request.json();
+        const { title, description, image, userId, slug } = reqBody;
 
-        const newBlog = await Blog.create(request.body);
+        const newBlog = await Blog.create(reqBody);
         return NextResponse.json(newBlog);
     } catch (err) {
         console.log(err);
