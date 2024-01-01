@@ -7,6 +7,9 @@ const nextConfig = {
         }, {
             protocol: 'https',
             hostname: '**.flaticon.com',
+        }, {
+            protocol: 'https',
+            hostname: 'images.unsplash.com',
         }]
     }
 }
