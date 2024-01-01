@@ -7,8 +7,6 @@ import { useRouter } from "next/navigation";
 
 export default function Navbar() {
     const router = useRouter();
-    // const session = true;
-    // const isAdmin = true;
     const [isAdmin, setIsAdmin] = useState(false);
     const [session, setSession] = useState({});
 
@@ -23,20 +21,19 @@ export default function Navbar() {
         }
     };
 
-    const getUserInfo = async () => {
-        try {
-            const userInfo = await axios.get('/api/users/user', session, { caches: 'no-cache' });
-            setSession(userInfo.data.data);
-            setIsAdmin(userInfo.data.data.isAdmin);
-        } catch (error) {
-            console.log('User info not found', error.message);
-            toast.error(error.message);
-        }
-    };
-
     useEffect(() => {
+        const getUserInfo = async () => {
+            try {
+                const userInfo = await axios.get('/api/users/user');
+                setSession(userInfo.data.data);
+                setIsAdmin(userInfo.data.data.isAdmin);
+            } catch (error) {
+                console.log('User info not found', error.message);
+                toast.error(error.message);
+            }
+        };
         getUserInfo();
-    },[]);
+    }, []);
 
     return (
         <header className="text-gray-600 body-font">
